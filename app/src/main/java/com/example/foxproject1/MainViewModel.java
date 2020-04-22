@@ -1,18 +1,23 @@
 package com.example.foxproject1;
 
+import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class MainViewModel extends ViewModel {
 
-    private String lastText;
-    private Integer textCount = 0;
+    MutableLiveData<ScreenEvent> telephone = new MutableLiveData<>();
 
-    public void setText(String s) {
-        lastText = s;
-        textCount++;
+    private Integer olaTextCount = 0;
+    private Integer mamaTextCount = 0;
+
+    public void onClickOla(String text) {
+        olaTextCount++;
+        telephone.postValue(new ShowLabel(text + olaTextCount));
     }
 
-    public String getLastText() {
-        return lastText + " " + textCount;
+    public void onClickMama(String text) {
+        mamaTextCount++;
+        telephone.postValue(new ShowToast(text + mamaTextCount));
     }
+
 }

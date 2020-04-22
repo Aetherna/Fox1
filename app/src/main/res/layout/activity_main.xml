@@ -21,6 +21,15 @@
         android:id="@+id/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:text="ola boga"
         app:layout_constraintBottom_toBottomOf="parent" />
+
+
+    <Button
+        android:id="@+id/buttonMama"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mamma mia"
+        app:layout_constraintBottom_toTopOf="@id/button" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
